@@ -12,6 +12,13 @@ export const Title = styled.h1`
   text-align: center;
 `;
 
+export const Subtitle = styled.h1`
+  font-size: 1rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+`;
+
 export const Button = styled.button`
   padding: 10px 20px;
   margin-top: 20px;

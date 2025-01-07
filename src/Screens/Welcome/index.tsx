@@ -1,17 +1,18 @@
 import { useNavigate } from 'react-router-dom';
-import { Button, Container, Title } from './style';
+import { Button, Container, Subtitle, Title } from './style';
 
 const Welcome = () => {
   const navigate = useNavigate();
+  const accessKey = Math.random().toString(36).substring(7).toUpperCase();
 
   const handleStart = () => {
-    const accessKey = Math.random().toString(36).substring(7).toUpperCase();
     navigate('/imei', { state: { accessKey } });
   };
 
   return (
     <Container>
       <Title>Bem-vindo à Vistoria de Seguro Celular</Title>
+      <Subtitle>Chave de acesso: {accessKey}</Subtitle>
       <Button onClick={handleStart}>Iniciar</Button>
     </Container>
   );
