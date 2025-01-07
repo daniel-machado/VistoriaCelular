@@ -10,8 +10,7 @@ export const Canvas = styled.canvas`
 
 export const Button = styled.button`
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  top: 10px;
   padding: 15px 20px;
   background: #28a745;
   color: #fff;
@@ -30,6 +29,10 @@ export const Timer = styled.div`
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 16px;
+
+  p {
+  color: #28a745;
+  }
 `;
 
 export const TestResult = styled.div`

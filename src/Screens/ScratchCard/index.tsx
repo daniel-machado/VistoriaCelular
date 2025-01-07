@@ -177,12 +177,16 @@ const ScratchCard: React.FC = () => {
       {testStarted && !testFinished && (
         <Timer>
           Tempo restante: {timeLeft}s
+          {
+            timeLeft >= 55 &&
+            <p>Arraste o dedo na tela para testar</p>
+          }
         </Timer>
       )}
 
       {!testStarted && !testFinished && (
         <Button onClick={startTest}>
-          Iniciar Teste
+          Clique para testar a tela
         </Button>
       )}
 
