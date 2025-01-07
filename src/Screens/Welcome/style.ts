@@ -14,6 +14,7 @@ export const Title = styled.h1`
 
 export const Button = styled.button`
   padding: 10px 20px;
+  margin-top: 20pxclear;
   background-color: #28a745;
   color: #fff;
   border: none;
