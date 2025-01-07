@@ -14,6 +14,13 @@ export const Title = styled.h1`
   text-align: center;
   font-weight: bold;
   color: #333;
+  margin-bottom: 7px;
+`;
+
+export const Subtitle = styled.h1`
+  font-size: 1rem;
+  text-align: center;
+  color: #333;
   margin-bottom: 20px;
 `;
 

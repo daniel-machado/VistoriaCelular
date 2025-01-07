@@ -68,6 +68,14 @@ export const GlobalStyles = createGlobalStyle`
     height: 100%;
   }
 
+  .fullscreen-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   button {
     cursor: pointer;
     font-size: 1rem;

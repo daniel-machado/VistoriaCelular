@@ -11,7 +11,7 @@ const Welcome = () => {
 
   return (
     <Container>
-      <Title>Bem-vindo ao Seguro Celular</Title>
+      <Title>Bem-vindo à Vistoria de Seguro Celular</Title>
       <Button onClick={handleStart}>Iniciar</Button>
     </Container>
   );

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { brands, models, capacities } from '../../Data/deviceData';
-import { Button, Container, Input, Option, Select, Title } from './styles';
+import { Button, Container, Input, Option, Select, Subtitle, Title } from './styles';
 
 type Brand = keyof typeof models; // Marca é uma chave de 'models'
 type CapacityModels = keyof typeof capacities; // Tipando as chaves de capacities
@@ -24,8 +24,9 @@ const IMEIInput = () => {
   };
 
   return (
-    <Container>
+    <Container className="fullscreen-container">
       <Title>Insira os detalhes do dispositivo</Title>
+      <Subtitle>Chave de acesso: {accessKey}</Subtitle>
       <Input
         type="text"
         value={imei}
