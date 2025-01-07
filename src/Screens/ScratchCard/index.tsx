@@ -34,10 +34,13 @@ const ScratchCard: React.FC = () => {
       }
     }
 
+    enterFullscreen();
+
     return () => {
       if (timerId) {
         clearTimeout(timerId);
       }
+      //exitFullscreen();
     };
   }, [timerId]);
 
@@ -59,6 +62,39 @@ const ScratchCard: React.FC = () => {
       const rect = canvas.getBoundingClientRect();
       canvas.width = rect.width;
       canvas.height = rect.height;
+    }
+  };
+
+  const enterFullscreen = () => {
+    const element = document.documentElement;
+    if(element.requestFullscreen) {
+      element.requestFullscreen();
+      // @ts-expect-error MOZ
+    } else if(element.mozRequestFullScreen) {
+      // @ts-expect-error FIRE
+      element.mozRequestFullScreen(); // Firefox
+      // @ts-expect-error CHome
+    } else if(element.webkitRequestFullscreen) {
+      // @ts-expect-error SAFARI
+      element.webkitRequestFullscreen(); // Chrome and Safari
+      // @ts-expect-error OUTRO
+    } else if(element.msRequestFullscreen) {
+      // @ts-expect-error OUTRO
+      element.msRequestFullscreen();
+    }
+  };
+
+  const exitFullscreen = () => {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+      // @ts-expect-error MOX
+    } else if (document.webkitExitFullscreen) {
+      // @ts-expect-error CHOR
+      document.webkitExitFullscreen();
+      // @ts-expect-error OUTRO
+    } else if (document.msExitFullscreen) {
+      // @ts-expect-error SAIR
+      document.msExitFullscreen();
     }
   };
 
@@ -159,6 +195,7 @@ const ScratchCard: React.FC = () => {
   };
 
   const handleNavigateToResults = () => {
+    exitFullscreen(); // Sai do modo fullscreen ao clicar no botão.
     navigate('/result', { state: { imei, brand, model, capacity, accessKey, coverage } });
   };
 
@@ -177,17 +214,12 @@ const ScratchCard: React.FC = () => {
       {testStarted && !testFinished && (
         <Timer>
           Tempo restante: {timeLeft}s
-          {
-            timeLeft >= 55 &&
-            <p>Arraste o dedo na tela para testar</p>
-          }
+          {timeLeft >= 55 && <p>Arraste o dedo na tela para testar</p>}
         </Timer>
       )}
 
       {!testStarted && !testFinished && (
-        <Button onClick={startTest}>
-          Clique para testar a tela
-        </Button>
+        <Button onClick={startTest}>Clique para testar a tela</Button>
       )}
 
       {testFinished && (

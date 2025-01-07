@@ -19,6 +19,9 @@ const IMEIInput = () => {
     if (imei.length === 15 && /^\d+$/.test(imei) && brand && model && capacity) {
       navigate('/scratch', { state: { imei, brand, model, capacity, accessKey } });
     } else {
+      if(imei.length < 15){
+        alert('O IMEI precisa ter exatamente 15 dígitos');
+      }
       alert('Por favor, preencha todos os campos corretamente.');
     }
   };
