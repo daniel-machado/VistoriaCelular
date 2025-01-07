@@ -32,17 +32,15 @@ const Result: React.FC = () => {
         <div>
           <h3>Informações do Dispositivo:</h3>
           <DeviceInfo>
-            <p><strong>Sistema Operacional:</strong> {osVersion}</p>
-            <p><strong>Versão do Sistema Operacional:</strong> {isIOS ? 'iOS' : isAndroid ? 'Android' : 'Desconhecido'}</p>
-            <p><strong>Tipo de Dispositivo:</strong> {deviceType}</p>
-            <p><strong>Navegador:</strong> {browserName}</p>
-            <p><strong>Versão do Navegador:</strong> {browserVersion}</p>
             <p><strong>Dispositivo Móvel:</strong> {isMobile ? 'Sim' : 'Não'}</p>
+            <p><strong>Tipo de Dispositivo:</strong> {deviceType}</p>
+            <p><strong>Sistema Operacional:</strong> {isIOS ? 'iOS' : isAndroid ? 'Android' : 'Desconhecido'} - {osVersion}</p>
+            <p><strong>Navegador utilizado:</strong> {browserName} - {browserVersion}</p>
           </DeviceInfo>
         </div>
 
         <BackButton onClick={handleNavigateToHome}>
-          Voltar para a Tela Inicial
+          Finalizar
         </BackButton>
       </ResultContent>
     </ResultContainer>
