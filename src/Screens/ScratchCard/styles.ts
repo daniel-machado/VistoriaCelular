@@ -43,7 +43,7 @@ export const Subtitle = styled.h1`
   margin-top: 20px;
   font-family: ${({ theme }) => theme.fontPrimary};
   font-weight: ${({ theme }) => theme.fontSemiBold};
-  color: ${({ theme }) => theme.text_secondary};
+  color: ${({ theme }) => theme.background};
 `;
 
 export const ButtonResult = styled.button`
@@ -69,7 +69,7 @@ export const TestResult = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background: #000;
-  width: 90vw;
+  color: #fff;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
