@@ -7,7 +7,7 @@ export const Container = styled.div`
   justify-content: center;
   padding: 40px;
   margin: 20px 0;
-  height: 90vh; 
+  height: 70vh; 
   width: 90vw;
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.bordeSec};

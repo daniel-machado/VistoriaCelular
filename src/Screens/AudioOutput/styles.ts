@@ -15,6 +15,7 @@ export const Container = styled.div`
   justify-content: center;
   padding: 40px;
   margin: 20px 0;
+  width: 90vw;
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.bordeSec};
   //box-shadow: 0 1px 3px ${({ theme }) => theme.bordeSec};
@@ -91,7 +92,7 @@ export const ButtonSecondary = styled.button`
   font-weight: ${({ theme }) => theme.fontSemiBold};
   font-size: 1rem; //font-size: 1rem;
   border-radius: 4px;
-  width: 90vw;
+  width: 100%;
   align-items: center;
   padding: 12px 24px;
   border: none;
