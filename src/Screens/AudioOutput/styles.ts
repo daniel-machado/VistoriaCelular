@@ -91,7 +91,7 @@ export const ButtonSecondary = styled.button`
   font-weight: ${({ theme }) => theme.fontSemiBold};
   font-size: 1rem; //font-size: 1rem;
   border-radius: 4px;
-  width: 100%;
+  width: 90vw;
   align-items: center;
   padding: 12px 24px;
   border: none;

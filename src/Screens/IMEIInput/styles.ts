@@ -8,6 +8,7 @@ export const Container = styled.div`
   padding: 40px;
   margin: 20px 0;
   height: 90vh; 
+  width: 90vw;
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.bordeSec};
   //box-shadow: 0 1px 3px ${({ theme }) => theme.bordeSec};

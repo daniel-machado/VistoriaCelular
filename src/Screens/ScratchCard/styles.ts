@@ -69,7 +69,7 @@ export const TestResult = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background: #000;
-  color: #fff;
+  width: 90vw;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
