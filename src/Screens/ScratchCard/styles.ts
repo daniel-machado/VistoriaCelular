@@ -12,8 +12,10 @@ export const Button = styled.button`
   position: absolute;
   top: 10px;
   padding: 15px 20px;
-  background: #28a745;
-  color: #fff;
+  background-color: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.background};
+  font-family: ${({ theme }) => theme.fontPrimary};
+  font-weight: ${({ theme }) => theme.fontSemiBold};
   border: none;
   border-radius: 4px;
   font-size: 16px;
@@ -31,9 +33,35 @@ export const Timer = styled.div`
   font-size: 16px;
 
   p {
-  color: #28a745;
+    color: ${({ theme }) => theme.primary};
   }
 `;
+
+export const Subtitle = styled.h1`
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 20px;
+  font-family: ${({ theme }) => theme.fontPrimary};
+  font-weight: ${({ theme }) => theme.fontSemiBold};
+  color: ${({ theme }) => theme.text_secondary};
+`;
+
+export const ButtonResult = styled.button`
+  margin-top: 10px;
+  background-color: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.background};
+  font-family: ${({ theme }) => theme.fontPrimary};
+  font-weight: ${({ theme }) => theme.fontSemiBold};
+  font-size: 16px; //font-size: 1rem;
+  border-radius: 4px;
+  width: 100%;
+  align-items: center;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+`;
+
 
 export const TestResult = styled.div`
   position: absolute;
@@ -45,15 +73,4 @@ export const TestResult = styled.div`
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-
-  button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-  }
 `;

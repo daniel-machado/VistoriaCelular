@@ -17,7 +17,7 @@ const IMEIInput = () => {
 
   const handleValidation = () => {
     if (imei.length === 15 && /^\d+$/.test(imei) && brand && model && capacity) {
-      navigate('/scratch', { state: { imei, brand, model, capacity, accessKey } });
+      navigate('/audioinput', { state: { imei, brand, model, capacity, accessKey } });
     } else {
       if(imei.length < 15){
         alert('O IMEI precisa ter exatamente 15 dígitos');
@@ -27,7 +27,7 @@ const IMEIInput = () => {
   };
 
   return (
-    <Container className="fullscreen-container">
+    <Container>
       <Title>Insira os detalhes do dispositivo</Title>
       <Subtitle>Chave de acesso: {accessKey}</Subtitle>
       <Input
@@ -44,6 +44,8 @@ const IMEIInput = () => {
       <br />
 
       <Select
+        id="insurance"
+        name="insurance"
         value={brand}
         onChange={(e) => {
           const selectedBrand = e.target.value as Brand; // Garantir que a marca é uma chave válida
@@ -52,7 +54,7 @@ const IMEIInput = () => {
           setCapacity('');
         }}
       >
-        <Option value="">Selecione a Marca</Option>
+        <Option value="" disabled hidden>Selecione a Marca</Option>
         {brands.map((brand: string) => (
           <Option key={brand} value={brand}>
             {brand}
@@ -60,7 +62,6 @@ const IMEIInput = () => {
         ))}
       </Select>
       <br />
-
       {brand && (
         <Select
           value={model}

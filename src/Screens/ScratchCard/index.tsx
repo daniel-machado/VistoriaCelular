@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Canvas, Button, Timer, TestResult } from './styles'; 
+import { Canvas, Button, Timer, TestResult, Subtitle, ButtonResult } from './styles'; 
 
 const ScratchCard: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -15,7 +15,16 @@ const ScratchCard: React.FC = () => {
   const timeLimit = 60; // 60 segundos para o teste
   const navigate = useNavigate();
   const location = useLocation();
-  const { imei, brand, model, capacity, accessKey } = location.state;
+  const { micQuality, 
+    audioUrl, 
+    imei, 
+    brand, 
+    model, 
+    capacity, 
+    accessKey, 
+    audioTestResult,
+    audioHeard,
+  } = location.state;
 
   const ctx = useRef<CanvasRenderingContext2D | null>(null);
 
@@ -29,7 +38,7 @@ const ScratchCard: React.FC = () => {
 
       if (ctx.current) {
         ctx.current.lineCap = 'round';
-        ctx.current.strokeStyle = 'rgba(40, 167, 69, 0.8)';
+        ctx.current.strokeStyle = 'rgba(0, 70, 192, 0.8)';
         ctx.current.lineWidth = 30;
       }
     }
@@ -196,7 +205,18 @@ const ScratchCard: React.FC = () => {
 
   const handleNavigateToResults = () => {
     exitFullscreen(); // Sai do modo fullscreen ao clicar no botão.
-    navigate('/result', { state: { imei, brand, model, capacity, accessKey, coverage } });
+    navigate('/result', { state: {  
+      micQuality,
+      audioUrl, 
+      imei, 
+      brand, 
+      model, 
+      capacity, 
+      accessKey, 
+      audioTestResult,
+      audioHeard,
+      coverage } 
+    });
   };
 
   return (
@@ -224,8 +244,8 @@ const ScratchCard: React.FC = () => {
 
       {testFinished && (
         <TestResult>
-          <p>Teste Concluído! Cobertura final: {coverage.toFixed(2)}%</p>
-          <button onClick={handleNavigateToResults}>Ir para Resultado</button>
+          <Subtitle>Teste Concluído! Cobertura final: {coverage.toFixed(2)}%</Subtitle>
+          <ButtonResult onClick={handleNavigateToResults}>Ir para Resultado</ButtonResult>
         </TestResult>
       )}
     </div>
