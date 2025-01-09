@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { BackButton, ResultText, Container, Title, Subtitle, Audio } from './styles'; // Importando os componentes estilizados
-import { isMobile, isIOS, isAndroid, deviceType, browserName, browserVersion, osVersion } from 'react-device-detect';
+import { isIOS, isAndroid, browserName, browserVersion, osVersion } from 'react-device-detect';
 
 const Result: React.FC = () => {
   const navigate = useNavigate(); // Usamos o useNavigate para navegação
@@ -54,8 +54,6 @@ const Result: React.FC = () => {
           </ul>
   
           <ul className='info-class'>
-            <li><strong>Dispositivo Móvel:</strong> {isMobile ? 'Sim' : 'Não'}</li>
-            <li><strong>Tipo de Dispositivo:</strong> {deviceType}</li>
             <li><strong>Sistema Operacional:</strong> {isIOS ? 'iOS' : isAndroid ? 'Android' : 'Desconhecido'} - {osVersion}</li>
             <li><strong>Navegador utilizado:</strong> {browserName} - {browserVersion}</li>
           </ul>

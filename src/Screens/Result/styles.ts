@@ -69,7 +69,7 @@ export const DeviceInfo = styled.div`
   background-color: ${({ theme }) => theme.background_2};
   padding: 15px;
   border-radius: 5px;
-  margin-top: 20px;
+  margin-top: 10px;
 
   p {
     font-size: 1rem;
