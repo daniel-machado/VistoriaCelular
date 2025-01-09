@@ -5,6 +5,7 @@ import ScratchCard from '../Screens/ScratchCard';
 import Result from '../Screens/Result';
 import AudioInput from '../Screens/AudioInput';
 import AudioOutput from '../Screens/AudioOutput';
+import Page404 from '../Screens/404Page';
 
 const AppRoutes = () => {
   return (
@@ -15,6 +16,8 @@ const AppRoutes = () => {
       <Route path="/audioinput" element={<AudioInput />} />
       <Route path="/audiooutput" element={<AudioOutput />} />
       <Route path="/result" element={<Result />} />
+      {/* Página 404 para rotas inválidas */}
+      <Route path="*" element={<Page404 />} />
 
     </Routes>
   );
