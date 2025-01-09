@@ -1,5 +1,5 @@
 import { ButtonWithIcon } from "./styles";
-import { FaChevronLeft } from "react-icons/fa"; // Ícone de exemplo (casa)
+import { FaChevronLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const BackToHomeButton = () => {
@@ -10,7 +10,7 @@ const BackToHomeButton = () => {
 
   return (
     <ButtonWithIcon onClick={handleNavigateHome}>
-      <FaChevronLeft /> {/* Ícone */}
+      <FaChevronLeft />
       Voltar para a tela inicial
     </ButtonWithIcon>
   );

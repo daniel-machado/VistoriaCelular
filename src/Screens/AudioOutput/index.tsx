@@ -1,7 +1,17 @@
 import { useEffect, useState, useRef } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
-import { sounds } from "../../Data/sounds"; // Supondo que os sons estão sendo importados de um arquivo
-import { Container, Title, Button, Card, CardContainer, Result, Subtitle, ButtonsActionsFinally, ButtonSecondary } from './styles';
+import { sounds } from "../../Data/sounds"; 
+import {
+  Container, 
+  Title, 
+  Button, 
+  Card, 
+  CardContainer, 
+  Result, 
+  Subtitle, 
+  ButtonsActionsFinally, 
+  ButtonSecondary 
+} from './styles';
 
 // Tipo para os itens do array `sounds`
 interface Sound {
@@ -64,9 +74,7 @@ const AudioOutput = () => {
     window.location.reload(); // Isso recarrega a página, reiniciando o fluxo
   };
 
-  // Função para avançar para a próxima página
   const goToNextPage = () => {
-    // Passa o resultado do teste de áudio e o estado "Áudio escutado" para a próxima tela
     navigate('/scratch', { 
       state: { 
         micQuality, 

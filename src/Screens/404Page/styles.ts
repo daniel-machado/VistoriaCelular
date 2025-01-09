@@ -7,6 +7,7 @@ export const Container = styled.div`
   justify-content: center;
   padding: 40px;
   margin: 20px 0;
+  width: 90vw;
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.bordeSec};
   //box-shadow: 0 1px 3px ${({ theme }) => theme.bordeSec};
@@ -29,28 +30,4 @@ export const Subtitle = styled.h1`
   font-family: ${({ theme }) => theme.fontPrimary};
   font-weight: ${({ theme }) => theme.fontSemiBold};
   color: ${({ theme }) => theme.text_secondary};
-`;
-
-export const ButtonWithIcon = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px; /* Espaço entre o ícone e o texto */
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: #0056b3;
-  }
-
-  svg {
-    font-size: 1.2rem; /* Tamanho do ícone */
-  }
 `;

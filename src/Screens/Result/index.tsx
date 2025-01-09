@@ -4,7 +4,7 @@ import { BackButton, ResultText, Container, Title, Subtitle, Audio } from './sty
 import { isIOS, isAndroid, browserName, browserVersion, osVersion } from 'react-device-detect';
 
 const Result: React.FC = () => {
-  const navigate = useNavigate(); // Usamos o useNavigate para navegação
+  const navigate = useNavigate(); 
   const location = useLocation();
   const { micQuality,
     audioUrl, 
